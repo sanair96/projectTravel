@@ -1,0 +1,12 @@
+enum VALUES {
+    HELLO
+    WORLD
+}
+
+type Query {
+    hello: String
+}
+
+type Mutation {
+    
+}

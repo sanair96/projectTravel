@@ -1,0 +1,10 @@
+overwrite: true
+schema: "./src/schema/schema.graphql"
+documents: null
+generates:
+  ../projectTravelFrontend/shared/apolloComponents/types.ts:
+    plugins:
+      - "typescript"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

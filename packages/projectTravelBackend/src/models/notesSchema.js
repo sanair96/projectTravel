@@ -2,16 +2,17 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var noteSchema = new Schema({
-title:  String,
-author: String,
-body:   String,
-comments: [{ body: String, date: Date }],
+title:  {type: String, required:true},
+author: {type: String, required:true},
+body:   {type: String, required:true},
 date: { type: Date, default: Date.now },
-hidden: Boolean,
+hidden: {type:Boolean, default: false},
 meta: {
-    votes: Number,
-    favs:  Number
+    votes: {type:Number,default:0},
+    favs:  {type:Number,default:0}
 }
 });
 
-export default noteSchema;
+const Note = mongoose.model('Note', noteSchema);
+
+module.exports = Note;
